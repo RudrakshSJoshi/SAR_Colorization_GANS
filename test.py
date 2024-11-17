@@ -12,7 +12,7 @@ def load_image(image_path):
     image = tf.io.read_file(image_path)
     image = tf.image.decode_jpeg(image, channels=3)
     image = tf.image.resize(image, [IMG_HEIGHT, IMG_WIDTH])
-    image = (image / 127.5) - 1  # Normalize to [-1, 1]
+    image = (image / 127.5) - 1  # Normalize image to [-1, 1]
     return image
 
 def load_and_preprocess_image(image_path):
